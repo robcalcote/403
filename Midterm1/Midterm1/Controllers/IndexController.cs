@@ -11,7 +11,7 @@ namespace Midterm1.Controllers
         // GET: Index
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 }

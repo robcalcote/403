@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Dictionary";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/StyleSheetCustom.css">
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="@Url.Action("addOne", "Dictionary")" class="w3-bar-item w3-button">1. Add one item to Dictionary</a>
+        <a href="@Url.Action("hugeList", "Dictionary")" class="w3-bar-item w3-button">2. Add Huge List of Items to Dictionary</a>
+        <a href="@Url.Action("displayDictionary","Dictionary")" class="w3-bar-item w3-button">3. Display Dictionary</a>
+        <a href="@Url.Action("removeDictionary","Dictionary")" class="w3-bar-item w3-button">4. Delete from Dictionary</a>
+        <!-- Completed thus far -->
+        <a href="@Url.Action("clearDictionary","Dictionary")" class="w3-bar-item w3-button">5. Clear Dictionary</a>
+        <a href="@Url.Action("searchDictionary","Dictionary")" class="w3-bar-item w3-button">6. Search Dictionary</a>
+        <a href="@Url.Action("ExitApp","Exit")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
+    </div>
+
+    <!-- ViewBag.Output total concatenation displayed -->
+    @Html.Raw((String)ViewBag.Output)
+
+
+
+    <!-- Page Content -->
+    <div style="margin-left:25%">
+
+        <!-- Title of the page (Above the side menu navbar) -->
+        <div class="w3-container w3-teal">
+            <h1>Dictionary Page</h1>
+        </div>
+
+        <!-- Nerd Kid pic! -->
+        <img src="~/Graphics/Dictionary.jpg" alt="Car" style="width:100%">
+
+        <!-- A brief explanation of what a dictionary is. this will always display above the output (or ViewBag) -->
+        <div class="w3-container">
+            <h2>The Dictionary Page</h2>
+            <p>A Dictionary is a data storage type where we can add and take away values.</p>
+            <p>The Dictionary is a data structure with a key, value pair</p>
+        </div>
+
+        <!-- will display the Dictionary in the case that it is not empty -->
+        @if (ViewBag.Dictionary != null)
+        {
+            <div>
+                    @foreach (var item in ViewBag.Dictionary)
+                    {
+                        <p>
+                            @item
+                        </p>
+                    }
+            </div>
+        }
+
+        <!--this will generate a form for users to search for specific items in the Dictionary-->
+        <div>
+            @if (ViewBag.Search != null)
+            {
+                using (Html.BeginForm("SearchDictionary", "Dictionary", FormMethod.Post))
+                {
+                    <label for="inputEmail">Search</label>
+                    @Html.TextBox("Search here")
+                    <button type="submit">Submit</button>
+                }
+            }
+        </div>
+
+        <!-- This ViewBag is called in the case that the Dictionary is completely empty and items cannot be deleted or displayed -->
+        <div>
+            @if (ViewBag.Searched != null)
+            {
+                <p>
+                    @ViewBag.Searched
+                </p>
+            }
+        </div>
+
+
+        <div>
+            @if (ViewBag.Delete != null)
+            {
+                @ViewBag.Delete
+            }
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -8,3 +8,12 @@
     margin-right: auto;
     width: 50%;
 }
+
+/* These are copied from Matt's repo */
+#stacktitle {
+    text-align: center;
+}
+
+#searchform {
+    text-align: center;
+}

@@ -168,6 +168,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Stack\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,7 +182,6 @@
     <Folder Include="Views\Dictionary\" />
     <Folder Include="Views\Exit\" />
     <Folder Include="Views\Queue\" />
-    <Folder Include="Views\Stack\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

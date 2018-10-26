@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="Content\CustomStyles.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\CustomScripts.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

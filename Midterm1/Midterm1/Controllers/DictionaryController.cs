@@ -128,7 +128,5 @@ namespace Midterm1.Controllers
 
             return View("Index");
         }
-
-
     }
 }

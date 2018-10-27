@@ -17,17 +17,16 @@
         <h3 class="w3-bar-item">Menu</h3>
         <a href="@Url.Action("addOne", "Dictionary")" class="w3-bar-item w3-button">1. Add one item to Dictionary</a>
         <a href="@Url.Action("hugeList", "Dictionary")" class="w3-bar-item w3-button">2. Add Huge List of Items to Dictionary</a>
-        <a href="@Url.Action("displayDictionary","Dictionary")" class="w3-bar-item w3-button">3. Display Dictionary</a>
-        <a href="@Url.Action("removeDictionary","Dictionary")" class="w3-bar-item w3-button">4. Delete from Dictionary</a>
+        <a href="@Url.Action("displayDictionary", "Dictionary")" class="w3-bar-item w3-button">3. Display Dictionary</a>
+        <a href="@Url.Action("removeDictionary", "Dictionary")" class="w3-bar-item w3-button">4. Delete from Dictionary</a>
         <!-- Completed thus far -->
-        <a href="@Url.Action("clearDictionary","Dictionary")" class="w3-bar-item w3-button">5. Clear Dictionary</a>
-        <a href="@Url.Action("searchDictionary","Dictionary")" class="w3-bar-item w3-button">6. Search Dictionary</a>
-        <a href="@Url.Action("ExitApp","Exit")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
+        <a href="@Url.Action("clearDictionary", "Dictionary")" class="w3-bar-item w3-button">5. Clear Dictionary</a>
+        <a href="@Url.Action("searchDictionary", "Dictionary")" class="w3-bar-item w3-button">6. Search Dictionary</a>
+        <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
     </div>
 
     <!-- ViewBag.Output total concatenation displayed -->
     @Html.Raw((String)ViewBag.Output)
-
 
 
     <!-- Page Content -->
@@ -57,6 +56,7 @@
     *
     *
     *--------------------------------------------------------------------------------------------------------------------------------->
+
         <!-- will display the Dictionary in the case that it is not empty -->
         @if (ViewBag.Dictionary != null)
         {
@@ -73,14 +73,14 @@
         <!--this will generate a form for users to search for specific items in the Dictionary-->
         <div>
             @if (ViewBag.Search != null)
-            {
-                using (Html.BeginForm("SearchDictionary", "Dictionary", FormMethod.Post))
                 {
+                    using (Html.BeginForm("SearchDictionary", "Dictionary", FormMethod.Post))
+                    {
                     <label for="inputEmail">Search</label>
                     @Html.TextBox("Search here")
                     <button type="submit">Submit</button>
+                    }
                 }
-            }
         </div>
 
         <!-- This ViewBag is called in the case that the Dictionary is completely empty and items cannot be deleted or displayed -->
@@ -91,18 +91,14 @@
             }
         </div>
 
-
+        <!-- Returns the results of the search of the dictionary. Including the stopwatch and how long it took to find or not find the item -->
         <div>
-            @if (ViewBag.Search != null)
+            @if (ViewBag.Searched != null)
             {
-                using (Html.BeginForm("SearchStack", "Stack", FormMethod.Post))
-                {
-                    <label for="inputEmail">Search</label>
-                    @Html.TextBox("Search here")
-                    <button type="submit">Submit</button>
-                }
+                @ViewBag.Searched
             }
+            <br />
+            @ViewBag.StopWatch
         </div>
-
 </body>
 </html>

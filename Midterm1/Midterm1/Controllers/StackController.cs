@@ -13,5 +13,35 @@ namespace Midterm1.Controllers
         {
             return View();
         }
+        /*
+        public ActionResult addOne()
+        {
+
+        }
+
+        public ActionResult hugeList()
+        {
+
+        }
+
+        public ActionResult displayStack()
+        {
+
+        }
+
+        public ActionResult popStack()
+        {
+
+        }
+
+        public ActionResult clearStack()
+        {
+
+        }
+
+        public ActionResult searchStack()
+        {
+
+        }*/
     }
 }

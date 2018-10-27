@@ -32,42 +32,9 @@
         <img src="~/Graphics/CoolKid.jpg" />
 
         <div class="w3-container">
-            <h2>Sidebar Navigation</h2>
+            <h2>Home Page</h2>
             <p>The sidebar width is set with "style="width:25%".</p>
             <p>The left margin of the page content is set to the same value.</p>
-        </div>
-
-        <!--this if statement, used with a razor, will show up only if viewbag.queue has been set to our queue-->
-        @if (ViewBag.Queue != null)
-        {
-            <div>
-                @foreach (var item in ViewBag.Queue)
-                {
-                    <p>@item</p>
-                }
-            </div>
-        }
-
-        <!--this if statement shows up for when users try to display or delete things from the queue and the queue is empty, its an error message-->
-        @if (ViewBag.Empty != null)
-        {
-            <div>
-                @ViewBag.Empty
-            </div>
-        }
-
-        <!--this will make a form for users to search for an item in the queue if they click on search queue-->
-        <div>
-            @if (ViewBag.Search != null)
-            {
-                using (Html.BeginForm("SearchQueue", "Queue", FormMethod.Post))
-                {
-                    <label for="inputEmail">Search</label>
-                    @Html.TextBox("Search here")
-                    <button type="submit">Submit</button>
-                }
-            }
-
         </div>
     </div>
 

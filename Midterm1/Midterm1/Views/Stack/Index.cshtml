@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Stack";
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/StyleSheetCustom.css">
@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
-    <!-- nate is the man 2.0 -->
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
         <h3 class="w3-bar-item">Menu</h3>
@@ -29,7 +28,6 @@
     @Html.Raw((String)ViewBag.Output)
 
 
-
     <!-- Page Content -->
     <div style="margin-left:25%">
 
@@ -37,13 +35,26 @@
             <h1>Stack Page</h1>
         </div>
 
-        <img src="~/Graphics/CoolKid.jpg" alt="Car" style="width:100%">
+        <!-- Nerd Kid pic! -->
+        <img src="~/Graphics/Stack.jpg" alt="Stack" style="width:100%">
 
+        <!-- A brief explanation of what a Stack is. this will always display above the output (or ViewBag) -->
         <div class="w3-container">
             <h2>The Stack Page</h2>
             <p>A Stack is a data storage type where we can add and take away values.</p>
             <p>The Stack is LIFO, the last element we push on is the first we would take off.</p>
         </div>
+
+        <!--------------------------------------------------------------------------------------------------------------------------------
+    *
+    *       The area below is everything to do with the ViewBag
+    *       ViewBag.Stack           will list all the items within the Stack
+    *       ViewBag.Search
+    *       ViewBag.Searched        Will display whether search result of found or not found within stack
+    *       ViewBag.Delete          will be shown if there is nothing within the Stack to be displayed
+    *
+    *--------------------------------------------------------------------------------------------------------------------------------->
+        
         <!--will display the stack-->
         @if (ViewBag.Stack != null)
         {
@@ -54,23 +65,24 @@
                         @item
                     </p>
                 }
-
-
             </div>
         }
+
         <!--this will generate a form for users to search for specific items in the stack-->
         <div>
             @if (ViewBag.Search != null)
             {
+                <br />
                 using (Html.BeginForm("SearchStack", "Stack", FormMethod.Post))
                 {
-                    <label for="inputEmail">Search</label>
-                    @Html.TextBox("Search here")
+                    <label for="inputEmail">Search:</label>
+                    @Html.TextBox("search")
                     <button type="submit">Submit</button>
                 }
             }
-
         </div>
+
+        <!-- displays the results of the search form, whether found or not found, or empty stack -->
         <div>
             @if (ViewBag.Searched != null)
             {
@@ -79,14 +91,14 @@
                 </p>
             }
         </div>
+
+        <!-- Will display results of the stack is empty -->
         <div>
             @if (ViewBag.Delete != null)
             {
                 @ViewBag.Delete
             }
         </div>
-
     </div>
-
 </body>
 </html>

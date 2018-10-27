@@ -86,11 +86,11 @@ namespace Midterm1.Controllers
         {
             if (dDictionary.Count == 0)
             {
-                ViewBag.Search = "The Dictionary is empty. You must add items before searching the Dictionary.";
+                ViewBag.Search = "Text";
             }
             else
             {
-                ViewBag.Search = "im not null";
+                ViewBag.Search = "Text";
             }
             return View("Index");
         }

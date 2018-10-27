@@ -114,6 +114,10 @@ namespace Midterm1.Controllers
                     {
                         ViewBag.Searched = "Found!";
                     }
+                    else if (dDictionary.Count == 0)
+                    {
+                        ViewBag.Searched = "Dictionary is empty! please add an item before searching!";
+                    }
                     else
                     {
                         ViewBag.Searched = "Not Found.";

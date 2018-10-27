@@ -73,12 +73,43 @@ namespace Midterm1.Controllers
             return View("Index");
         }
 
-        // Removes all entries from the dictionary.
+        // Removes all entries from the dictionary
         public ActionResult clearDictionary()
         {
             dDictionary.Clear();
 
             return View("Index");
+        }
+
+        public ActionResult searchdictionary()
+        {
+            if (dDictionary.Count == 0)
+            {
+                ViewBag.Search = "The Dictionary is empty. You must add items before searching the Dictionary.";
+            }
+            else
+            {
+                ViewBag.Search = "im not null";
+            }
+            return View("Index");
+        }
+
+        // Posts a form for the user to use to search the dictionary if their input is found or not
+        [HttpPost]
+        public String searchDictionary(FormCollection form)
+        {
+            String searchword = form["Search Here"].ToString();
+
+            if (dDictionary.ContainsValue(searchword))
+            {
+                ViewBag.Searched = "Found!";
+            }
+            else
+            {
+                ViewBag.Searched = "Not Found.";
+            }
+
+            return ViewBag.Searched;
         }
 
 

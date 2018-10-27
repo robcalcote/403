@@ -48,16 +48,25 @@
             <p>The Dictionary is a data structure with a key, value pair</p>
         </div>
 
+        <!--------------------------------------------------------------------------------------------------------------------------------
+    *
+    *       The area below is everything to do with the ViewBag
+    *       ViewBag.Dictionary      will list all the items within the dictionary
+    *       ViewBag.Delete          will be shown if there is nothing within the dictionary to be displayed
+    *       ViewBag.Searched
+    *
+    *
+    *--------------------------------------------------------------------------------------------------------------------------------->
         <!-- will display the Dictionary in the case that it is not empty -->
         @if (ViewBag.Dictionary != null)
         {
             <div>
-                    @foreach (var item in ViewBag.Dictionary)
-                    {
-                        <p>
-                            @item
-                        </p>
-                    }
+                @foreach (var item in ViewBag.Dictionary)
+                {
+                    <p>
+                        @item
+                    </p>
+                }
             </div>
         }
 
@@ -76,23 +85,24 @@
 
         <!-- This ViewBag is called in the case that the Dictionary is completely empty and items cannot be deleted or displayed -->
         <div>
-            @if (ViewBag.Searched != null)
-            {
-                <p>
-                    @ViewBag.Searched
-                </p>
-            }
-        </div>
-
-
-        <div>
             @if (ViewBag.Delete != null)
             {
                 @ViewBag.Delete
             }
         </div>
 
-    </div>
+
+        <div>
+            @if (ViewBag.Search != null)
+            {
+                using (Html.BeginForm("SearchStack", "Stack", FormMethod.Post))
+                {
+                    <label for="inputEmail">Search</label>
+                    @Html.TextBox("Search here")
+                    <button type="submit">Submit</button>
+                }
+            }
+        </div>
 
 </body>
 </html>

@@ -73,6 +73,64 @@ namespace Midterm1.Controllers
             return View("Index");
         }
 
+        // Removes all entries from the dictionary
+        public ActionResult clearDictionary()
+        {
+            dDictionary.Clear();
 
+            return View("Index");
+        }
+
+        // This will allow the 
+        public ActionResult searchdictionary()
+        {
+            if (dDictionary.Count == 0)
+            {
+                ViewBag.Search = "The Dictionary is empty. You must add items before searching the Dictionary.";
+            }
+            else
+            {
+                ViewBag.Search = "im not null";
+            }
+            return View("Index");
+        }
+
+        // Posts a form for the user to use to search the dictionary
+        // If result is found ViewBag.Searched is called and "Found!" is displayed.
+        // otherwise "Not Found." is displayed.
+        // In both cases, the time it took to search is also displayed.
+        [HttpPost]
+        public ActionResult searchDictionary(FormCollection form)
+        {
+            String searchword = form["Search Here"].ToString();
+
+            // Stopwatch code
+                System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+
+                sw.Start();
+
+                    //loop to do all the work
+                    if (dDictionary.ContainsValue(searchword))
+                    {
+                        ViewBag.Searched = "Found!";
+                    }
+                    else if (dDictionary.Count == 0)
+                    {
+                        ViewBag.Searched = "Dictionary is empty! please add an item before searching!";
+                    }
+                    else
+                    {
+                        ViewBag.Searched = "Not Found.";
+                    }
+
+                sw.Stop();
+
+                TimeSpan ts = sw.Elapsed;
+
+                ViewBag.StopWatch = "Time Elapsed: ";
+                ViewBag.StopWatch = ViewBag.StopWatch + ts;
+
+            return View("Index");
+        }
     }
 }

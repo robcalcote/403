@@ -19,7 +19,6 @@
         <a href="@Url.Action("hugeList", "Dictionary")" class="w3-bar-item w3-button">2. Add Huge List of Items to Dictionary</a>
         <a href="@Url.Action("displayDictionary", "Dictionary")" class="w3-bar-item w3-button">3. Display Dictionary</a>
         <a href="@Url.Action("removeDictionary", "Dictionary")" class="w3-bar-item w3-button">4. Delete from Dictionary</a>
-        <!-- Completed thus far -->
         <a href="@Url.Action("clearDictionary", "Dictionary")" class="w3-bar-item w3-button">5. Clear Dictionary</a>
         <a href="@Url.Action("searchDictionary", "Dictionary")" class="w3-bar-item w3-button">6. Search Dictionary</a>
         <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
@@ -38,7 +37,7 @@
         </div>
 
         <!-- Nerd Kid pic! -->
-        <img src="~/Graphics/Dictionary.jpg" alt="Car" style="width:100%">
+        <img src="~/Graphics/Dictionary.jpg" alt="Dictionary" style="width:100%">
 
         <!-- A brief explanation of what a dictionary is. this will always display above the output (or ViewBag) -->
         <div class="w3-container">
@@ -47,12 +46,12 @@
             <p>The Dictionary is a data structure with a key, value pair</p>
         </div>
 
-        <!--------------------------------------------------------------------------------------------------------------------------------
+    <!--------------------------------------------------------------------------------------------------------------------------------
     *
     *       The area below is everything to do with the ViewBag
     *       ViewBag.Dictionary      will list all the items within the dictionary
     *       ViewBag.Delete          will be shown if there is nothing within the dictionary to be displayed
-    *       ViewBag.Searched
+    *       ViewBag.Searched        Will display whether search result of found or not found within dictionary
     *
     *
     *--------------------------------------------------------------------------------------------------------------------------------->

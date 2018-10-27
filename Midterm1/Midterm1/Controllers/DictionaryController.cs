@@ -73,6 +73,14 @@ namespace Midterm1.Controllers
             return View("Index");
         }
 
+        // Removes all entries from the dictionary.
+        public ActionResult clearDictionary()
+        {
+            dDictionary.Clear();
+
+            return View("Index");
+        }
+
 
     }
 }

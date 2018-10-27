@@ -56,7 +56,15 @@ namespace Midterm1.Controllers
         // This method will remove one item from the top of the stack
         public ActionResult popStack()
         {
-            myStack.Pop();
+            if (myStack.Count == 0)
+            {
+                ViewBag.Delete = "The Stack is empty, please add an item before deleting from stack!";
+            }
+            else
+            {
+                myStack.Pop();
+                ViewBag.Delete = "1 item deleted from stack.";
+            }
 
             return View("Index");
         }
@@ -69,16 +77,16 @@ namespace Midterm1.Controllers
             return View("Index");
         }
     
-        
+        // This method will post in the form whether there is something in the dictionary or not
         public ActionResult searchStack()
         {
             if (myStack.Count == 0)
             {
-                ViewBag.Search = "The Stack contains nothing, please add an item to the stack before searching.";
+                ViewBag.Search = "Contains Nothing...";
             }
             else
             {
-                ViewBag.Search = "The Stack contains values, please run your search now...";
+                ViewBag.Search = "Search Now:";
             }
 
             return View("Index");

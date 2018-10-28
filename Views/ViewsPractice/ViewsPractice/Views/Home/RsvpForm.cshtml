@@ -17,10 +17,12 @@
 <body>
     <div class="jumbotron">
         <div class="container">
-            <!-- This form takes all the inputs from the user and passes them to the Controller -> Model
+                        <!-- This form takes all the inputs from the user and passes them to the Controller -> Model
                  And assigns the selected or typed values to variables within the model -->
             @using (Html.BeginForm())
             {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "text-danger"})
                 <p>Name:    @Html.TextBoxFor(x => x.sName)</p>
                 <p>Email:   @Html.TextBoxFor(x => x.sEmail)</p>
                 <p>Phone:   @Html.TextBoxFor(x => x.sPhone)</p>

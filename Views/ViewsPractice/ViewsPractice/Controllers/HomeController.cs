@@ -11,7 +11,18 @@ namespace ViewsPractice.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+
+            ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
+
             return View();
+        }
+
+
+        // This method will redirect to www.ksl.com
+        public ActionResult KSL()
+        {
+            return new RedirectResult("http://www.ksl.com");
         }
     }
 }

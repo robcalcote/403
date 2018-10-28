@@ -16,20 +16,19 @@
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="@Url.Action("addone", "Queue")" class="w3-bar-item w3-button">1. Add one time to Queue</a>
-        <a href="@Url.Action("hugelist", "Queue")" class="w3-bar-item w3-button">2. Add Huge List of Items to Queue</a>
-        <a href="@Url.Action("displaystack","Queue")" class="w3-bar-item w3-button">3. Display Queue</a>
-        <a href="@Url.Action("popstack","Queue")" class="w3-bar-item w3-button">4. Delete from Queue</a>
-        <a href="@Url.Action("clearstack","Queue")" class="w3-bar-item w3-button">5. Clear Queue</a>
-        <a href="@Url.Action("searchstack","Queue")" class="w3-bar-item w3-button">6. Search Queue</a>
+        <a href="@Url.Action("enqueue", "Queue")" class="w3-bar-item w3-button">1. Add one time to Queue</a>
+        <a href="@Url.Action("hugeList", "Queue")" class="w3-bar-item w3-button">2. Add Huge List of Items to Queue</a>
+        <a href="@Url.Action("displayQueue","Queue")" class="w3-bar-item w3-button">3. Display Queue</a>
+        <a href="@Url.Action("dequeue","Queue")" class="w3-bar-item w3-button">4. Delete from Queue</a>
+        <a href="@Url.Action("clearQueue","Queue")" class="w3-bar-item w3-button">5. Clear Queue</a>
+        <a href="@Url.Action("containsQueue","Queue")" class="w3-bar-item w3-button">6. Search Queue</a>
         <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
     </div>
 
     <!-- ViewBag.Output total concatenation displayed -->
     @Html.Raw((String)ViewBag.Output)
 
-
-
+    
     <!-- Page Content -->
     <div style="margin-left:25%">
 
@@ -37,57 +36,60 @@
             <h1>Stack Page</h1>
         </div>
 
-        <img src="~/Graphics/CoolKid.jpg" alt="Car" style="width:100%">
+        <!-- Image of a lunch line -->
+        <img src="~/Graphics/Queue.jpg" alt="Line of Kids" style="width:100%">
 
+        <!-- displays the main information about a queue-->
         <div class="w3-container">
-            <h2>The Stack Page</h2>
-            <p>A Stack is a data storage type where we can add and take away values.</p>
-            <p>The Stack is LIFO, the last element we push on is the first we would take off.</p>
+            <h2>The Queue Page</h2>
+            <p>A Queue is a data storage type where we can add and take away values.</p>
+            <p>The Queue is FIFO, the first element we enqueue on is the first we would take off.</p>
         </div>
-        <!--will display the stack-->
-        @if (ViewBag.Stack != null)
+
+        <!-- will display the contents of your Queue -->
+        @if (ViewBag.Queue != null)
         {
-            <div>
-                @foreach (var item in ViewBag.Stack)
+            <div class="w3-container">
+                @foreach (var item in ViewBag.Queue)
                 {
                     <p>
                         @item
                     </p>
                 }
-
-
             </div>
         }
+
         <!--this will generate a form for users to search for specific items in the stack-->
         <div>
             @if (ViewBag.Search != null)
             {
-                using (Html.BeginForm("SearchStack", "Stack", FormMethod.Post))
+                using (Html.BeginForm("SearchQueue", "Queue", FormMethod.Post))
                 {
-                    <label for="inputEmail">Search</label>
+                    <label for="inputEmail">Search:</label>
                     @Html.TextBox("Search here")
                     <button type="submit">Submit</button>
                 }
             }
-
         </div>
-        <div>
+
+        <!-- This viewbag will display the results of the search within the queue -->
+        <div class="w3-container">
             @if (ViewBag.Searched != null)
             {
                 <p>
                     @ViewBag.Searched
                 </p>
             }
-        </div>
-        <div>
+                
+
+        <!-- This ViewBag will display if the queue is empty and commands cannot be run -->
+        <div class="w3-container">
             @if (ViewBag.Delete != null)
             {
                 @ViewBag.Delete
             }
         </div>
-
-    </div>
-
+    </div class="w3-container">
 </body>
 </html>
 

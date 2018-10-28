@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <!-- ViewBag.Greeting is displayed and 'World' is concatenated on the end of the ViewBag -->
+        @ViewBag.Greeting World
+
+        <!-- Text displayed -->
+        <p>
+            Having a party!!
+        </p>
+
+        <!-- Html.ActionLink Parameters: (1) test to display on link. (2) Action method to perform when link is clicked -->
+        <h1>
+            @Html.ActionLink("RSVP Now", "RsvpForm")
+        </h1>
+    </div>
+</body>
+</html>

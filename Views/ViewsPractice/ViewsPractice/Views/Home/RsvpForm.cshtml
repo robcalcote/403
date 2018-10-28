@@ -1,0 +1,44 @@
+﻿@model ViewsPractice.Models.GuestResponses
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+                        <!-- This form takes all the inputs from the user and passes them to the Controller -> Model
+                 And assigns the selected or typed values to variables within the model -->
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "text-danger"})
+                <p>Name:    @Html.TextBoxFor(x => x.sName)</p>
+                <p>Email:   @Html.TextBoxFor(x => x.sEmail)</p>
+                <p>Phone:   @Html.TextBoxFor(x => x.sPhone)</p>
+                <p>Will you attend:
+                            @Html.DropDownListFor(x => x.bWillAttend, new[]
+                            {
+                                new SelectListItem()
+                                {Text = "Yes, I will be there", Value = bool.TrueString },
+                                new SelectListItem()
+                                {Text = "No, I will not be attending", Value = bool.FalseString }
+                            },
+                            "Choose an Option")
+                </p>
+                <input type="submit" value="Submit RSVP" />
+            }
+        </div>
+    </div>
+</body>
+</html>

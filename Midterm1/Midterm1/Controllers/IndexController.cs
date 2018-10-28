@@ -13,5 +13,10 @@ namespace Midterm1.Controllers
         {
             return View();
         }
+
+        public ActionResult ExitApp()
+        {
+            return Redirect("https://www.byu.edu");
+        }
     }
 }

@@ -49,7 +49,7 @@
         <!-- will display the contents of your Queue -->
         @if (ViewBag.Queue != null)
         {
-            <div>
+            <div class="w3-container">
                 @foreach (var item in ViewBag.Queue)
                 {
                     <p>
@@ -73,23 +73,23 @@
         </div>
 
         <!-- This viewbag will display the results of the search within the queue -->
-        <div>
+        <div class="w3-container">
             @if (ViewBag.Searched != null)
             {
                 <p>
                     @ViewBag.Searched
                 </p>
             }
-        </div>
+                
 
         <!-- This ViewBag will display if the queue is empty and commands cannot be run -->
-        <div>
+        <div class="w3-container">
             @if (ViewBag.Delete != null)
             {
                 @ViewBag.Delete
             }
         </div>
-    </div>
+    </div class="w3-container">
 </body>
 </html>
 

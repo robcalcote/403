@@ -99,11 +99,11 @@ namespace Midterm1.Controllers
             string searchword = form["Search here"].ToString();
             if (myQueue.Contains(searchword) == true)
             {
-                ViewBag.searchresult = "Found!";
+                ViewBag.Searched = "Found!";
             }
             else
             {
-                ViewBag.searchresult = "not Found...";
+                ViewBag.Searched = "not Found...";
             }
 
             return View("Index");

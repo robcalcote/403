@@ -15,7 +15,28 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
-    <div> 
+    <div class="jumbotron">
+        <div class="container">
+            <!-- This form takes all the inputs from the user and passes them to the Controller -> Model
+                 And assigns the selected or typed values to variables within the model -->
+            @using (Html.BeginForm())
+            {
+                <p>Name:    @Html.TextBoxFor(x => x.sName)</p>
+                <p>Email:   @Html.TextBoxFor(x => x.sEmail)</p>
+                <p>Phone:   @Html.TextBoxFor(x => x.sPhone)</p>
+                <p>Will you attend:
+                            @Html.DropDownListFor(x => x.bWillAttend, new[]
+                            {
+                                new SelectListItem()
+                                {Text = "Yes, I will be there", Value = bool.TrueString },
+                                new SelectListItem()
+                                {Text = "No, I will not be attending", Value = bool.FalseString }
+                            },
+                            "Choose an Option")
+                </p>
+                <input type="submit" value="Submit RSVP" />
+            }
+        </div>
     </div>
 </body>
 </html>

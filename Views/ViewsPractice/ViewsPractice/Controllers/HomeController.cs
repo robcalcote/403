@@ -18,6 +18,11 @@ namespace ViewsPractice.Controllers
             return View();
         }
 
+        // Action method to create and display RSVP form
+        public ViewResult RsvpForm()
+        {
+            return View();
+        }
 
         // This method will redirect to www.ksl.com
         public ActionResult KSL()

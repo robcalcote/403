@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ViewsPractice.Models;
 
 namespace ViewsPractice.Controllers
 {
@@ -19,9 +20,16 @@ namespace ViewsPractice.Controllers
         }
 
         // Action method to create and display RSVP form
+        [HttpGet]
         public ViewResult RsvpForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ViewResult RsvpForm(GuestResponses guestResponses)
+        {
+            return View("Thanks", guestResponses);
         }
 
         // This method will redirect to www.ksl.com

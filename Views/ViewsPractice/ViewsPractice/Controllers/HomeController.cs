@@ -29,7 +29,16 @@ namespace ViewsPractice.Controllers
         [HttpPost]
         public ViewResult RsvpForm(GuestResponses guestResponses)
         {
-            return View("Thanks", guestResponses);
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", guestResponses);
+            }
+            else
+            {
+                //In Case of a validation Error
+                return View("RsvpForm");
+            }
+
         }
 
         // This method will redirect to www.ksl.com

@@ -16,27 +16,53 @@
 </head>
 <body>
     <div class="jumbotron">
-        <div class="container">
+        <div class="container" style="align-items: center">
                         <!-- This form takes all the inputs from the user and passes them to the Controller -> Model
                  And assigns the selected or typed values to variables within the model -->
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(false, "", new { @class = "text-danger"})
-                <p>Name:    @Html.TextBoxFor(x => x.sName)</p>
-                <p>Email:   @Html.TextBoxFor(x => x.sEmail)</p>
-                <p>Phone:   @Html.TextBoxFor(x => x.sPhone)</p>
-                <p>Will you attend:
-                            @Html.DropDownListFor(x => x.bWillAttend, new[]
-                            {
-                                new SelectListItem()
-                                {Text = "Yes, I will be there", Value = bool.TrueString },
-                                new SelectListItem()
-                                {Text = "No, I will not be attending", Value = bool.FalseString }
-                            },
-                            "Choose an Option")
-                </p>
-                <input type="submit" value="Submit RSVP" />
+            <h1 style="text-align: center"> RSVP Now!</h1>
+            <br />
+            <br />
+            
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger"})
+
+                    <table style="width:100%">
+                        <tr>
+                            <th></th>
+                            <th>Your Response</th>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>@Html.TextBoxFor(x => x.sName)</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>@Html.TextBoxFor(x => x.sEmail)</td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td>@Html.TextBoxFor(x => x.sPhone)</td>
+                        </tr>
+                        <tr>
+                            <td>Will you attend:</td>
+                            <td>
+                                @Html.DropDownListFor(x => x.bWillAttend, new[]
+                               {
+                                   new SelectListItem()
+                                   {Text = "Yes, I will be there", Value = bool.TrueString },
+                                   new SelectListItem()
+                                   {Text = "No, I will not be attending", Value = bool.FalseString }
+                               },
+                               "Choose an Option")
+                            </td>
+                        </tr>
+                    </table>
+            <br />
+            <br />
+            <input type="submit" value="Submit RSVP" />
+
             }
         </div>
     </div>

@@ -11,19 +11,23 @@
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <!-- ViewBag.Greeting is displayed and 'World' is concatenated on the end of the ViewBag -->
-        @ViewBag.Greeting World
-
-        <!-- Text displayed -->
-        <p>
-            Having a party!!
-        </p>
-
-        <!-- Html.ActionLink Parameters: (1) test to display on link. (2) Action method to perform when link is clicked -->
-        <h1>
-            @Html.ActionLink("RSVP Now", "RsvpForm")
-        </h1>
+    <div class="col-sm-9 col-md-6 col-lg-8">
+        <div class="col-sm-9 col-md-6 col-lg-8" style="text-align: center">
+            <!-- ViewBag.Greeting is displayed and 'World' is concatenated on the end of the ViewBag -->
+            @ViewBag.Greeting World
+        </div>
+        <div class="col-sm-9 col-md-6 col-lg-8" style="text-align: center">
+            <!-- Text displayed -->
+            <p>
+                Having a party!!
+            </p>
+        </div>
+        <div class="col-sm-9 col-md-6 col-lg-8" style="text-align: center">
+            <!-- Html.ActionLink Parameters: (1) test to display on link. (2) Action method to perform when link is clicked -->
+            <h1>
+                @Html.ActionLink("RSVP Now", "RsvpForm")
+            </h1>
+        </div>
     </div>
 </body>
 </html>

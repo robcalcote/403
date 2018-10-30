@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("VideoTutorials")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This project is on Github.com/robcalcote/403 - it is all of the video tutorials")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("VideoTutorials")]

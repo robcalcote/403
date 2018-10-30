@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+// This file responds to events
+
 namespace VideoTutorials
 {
     public class MvcApplication : System.Web.HttpApplication

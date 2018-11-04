@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 // Controller for ASP.NET MVC C# Tutorial video assignment
+// https://github.com/byu-is-403/syllabus/blob/master/asp-dotnet-mvc/asp-mvc-tutorial.md
 
 namespace VideoTutorials.Controllers
 {
@@ -22,6 +23,11 @@ namespace VideoTutorials.Controllers
 
             ViewBag.Opponent = sTeamName.Equals("Gonzaga") ? "Beat Gonzaga" : "Beat anyone else";
 
+            return View();
+        }
+
+        public ViewResult RsvpForm()
+        {
             return View();
         }
     }

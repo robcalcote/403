@@ -5,6 +5,8 @@ using System.Web;
 
 namespace VideoTutorials.Models
 {
+    // https://github.com/byu-is-403/syllabus/blob/master/asp-dotnet-mvc/asp-mvc-tutorial.md
+
     public class GuestResponse
     {
         public string Name { get; set; }

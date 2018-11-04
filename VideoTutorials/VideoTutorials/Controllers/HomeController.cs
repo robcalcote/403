@@ -26,5 +26,12 @@ namespace VideoTutorials.Controllers
 
             return View();
         }
+
+        public ActionResult myTeam()
+        {
+            ViewBag.Message = "This is my team for the semester, let me tell you more about them!";
+
+            return View();
+        }
     }
 }

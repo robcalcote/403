@@ -1,0 +1,43 @@
+﻿@model VideoTutorials.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!-- https://github.com/byu-is-403/syllabus/blob/master/asp-dotnet-mvc/asp-mvc-tutorial.md -->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site1.css" />
+    <title>RsvpForm</title>
+</head>
+<!-- This form will be a strongly-typed form tied to the GuestResponse Model -->
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary();
+
+        <p>Name:    @Html.TextBoxFor(x => x.Name)</p>
+        <p>Email:   @Html.TextBoxFor(x => x.Email)</p>
+        <p>Phone:   @Html.TextBoxFor(x => x.Phone)</p>
+        <p>
+            Will you attend:
+            @Html.DropDownListFor( x => x.WillAttend, new[]
+              {
+                new SelectListItem()
+                {
+                  Text = "Yes", Value = bool.TrueString
+                },
+                new SelectListItem()
+                {
+                  Text = "No", Value = bool.FalseString
+                }
+              },
+              "Please choose one")
+        </p>
+        <input type="submit" value="Submit RSVP">
+    }
+</body>
+</html>

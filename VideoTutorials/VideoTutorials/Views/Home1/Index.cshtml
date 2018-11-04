@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!-- https://github.com/byu-is-403/syllabus/blob/master/asp-dotnet-mvc/asp-mvc-tutorial.md -->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div>
+        @ViewBag.Greeting World
+        <p>We are having a cool pool party</p>
+        @Html.ActionLink("RSVP Now", "RsvpForm")
+    </div>
+    <br />
+    <div>
+        @ViewBag.Opponent in the tournament!
+    </div>
+</body>
+</html>

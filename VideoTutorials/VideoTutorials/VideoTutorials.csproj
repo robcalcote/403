@@ -147,11 +147,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Home0912Controller.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataStructures.cs" />
     <Compile Include="Models\GuestResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -165,6 +167,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Array.png" />
+    <Content Include="Images\ArrayList.png" />
+    <Content Include="Images\Dictionary.png" />
+    <Content Include="Images\HashSet.png" />
+    <Content Include="Images\HashTable.png" />
+    <Content Include="Images\LinkedList.png" />
+    <Content Include="Images\List.png" />
+    <Content Include="Images\Queue.png" />
+    <Content Include="Images\Stack.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -199,6 +210,7 @@
     <Content Include="Views\Home1\RsvpForm.cshtml" />
     <Content Include="Views\Home1\ThankYou.cshtml" />
     <Content Include="Views\Home\myTeam.cshtml" />
+    <Content Include="Views\Home0912\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

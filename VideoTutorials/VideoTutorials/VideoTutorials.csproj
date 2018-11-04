@@ -198,6 +198,7 @@
     <Content Include="Views\Home1\Index.cshtml" />
     <Content Include="Views\Home1\RsvpForm.cshtml" />
     <Content Include="Views\Home1\ThankYou.cshtml" />
+    <Content Include="Views\Home\myTeam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,30 @@
+﻿@model VideoTutorials.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!-- This is the ThankYou view that is returned when using HttpPost after filling out the RSVPForm form -->
+<!-- https://github.com/byu-is-403/syllabus/blob/master/asp-dotnet-mvc/asp-mvc-tutorial.md -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ThankYou</title>
+</head>
+<body>
+    <div>
+        <h1>Thank You @Model.Name</h1>
+        @if (Model.WillAttend == true)
+        {
+            @:We look forward to seeing you!
+        }
+        else
+        {
+            @:Hopefully you can come next time.
+        }
+    </div>
+</body>
+</html>

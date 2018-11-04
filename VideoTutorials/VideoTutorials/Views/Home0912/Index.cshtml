@@ -14,9 +14,104 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="jumbotron">
-        <h1 style="text-align:center">Data Structures Walkthrough</h1>
-        <h3 style="text-align:center"><a href="/Home/Index">Click here to go back</a></h3>
+    <div class="container body-content">
+        <!-- Header with a link back to the home page -->
+        <div class="jumbotron">
+            <h1 style="text-align:center">Data Structures Walkthrough</h1>
+            <h3 style="text-align:center"><a href="/Home/Index">Click here to go back</a></h3>
+        </div>
+
+        <div class="row">
+            <!-- Arrays -->
+            <div class="col-md-4">
+                <h2>Arrays</h2>
+                <p><strong>Pros:</strong> Fast, Simple</p>
+                <p><strong>Cons:</strong> Size must be declared ahead of time, difficult to change size</p>
+                <br />
+                <img src="~/Images/Array.png" class="img-responsive" />
+            </div>
+
+            <!-- ArrayList -->
+            <div class="col-md-4">
+                <h2>ArrayList</h2>
+                <p><strong>Pros:</strong> Easier to use than Array</p>
+                <p><strong>Cons:</strong> Mixed data types = Dangerous, potentially wasteful</p>
+                <br />
+                <img src="~/Images/ArrayList.png" class="img-responsive" />
+            </div>
+
+            <!-- List -->
+            <div class="col-md-4">
+                <h2>List</h2>
+                <p><strong>Pros:</strong> Powerful, Efficient, Flexible in size</p>
+                <p><strong>Cons:</strong> Ordered nature can be tedious</p>
+                <br />
+                <img src="~/Images/List.png" class="img-responsive" />
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Linked List -->
+            <div class="col-md-4">
+                <h2>Linked List</h2>
+                <p><strong>Pros:</strong> Faster insertion/deletion than list, Can efficiently reorganize</p>
+                <p><strong>Cons:</strong> Slightly slower to iterate over</p>
+                <br />
+                <img src="~/Images/LinkedList.png" class="img-responsive" />
+            </div>
+
+            <!-- Stack -->
+            <div class="col-md-4">
+                <h2>Stack</h2>
+                <p><strong>LIFO -</strong> Last in First out (Think buffet plates)</p>
+                <p><strong>Pros:</strong> Useful for control, Lightweight</p>
+                <p><strong>Cons:</strong> Limit access to data, Sometimes inconvenient</p>
+                <br />
+                <img src="~/Images/Stack.png" class="img-responsive" />
+            </div>
+
+            <!-- Queue -->
+            <div class="col-md-4">
+                <h2>Queue</h2>
+                <p><strong>FIFO -</strong> First in First out (Think store checkout line)</p>
+                <p><strong>Pros:</strong> Simple like Stack, Lightweight</p>
+                <p><strong>Cons:</strong> Unnecessary Limitations from time to time</p>
+                <br />
+                <img src="~/Images/Queue.png" class="img-responsive" />
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Dictionary -->
+            <div class="col-md-4">
+                <h2>Dictionary</h2>
+                <p><strong>Key value Pairs</strong> (Think Dictionary word-definitioin pairs)</p>
+                <p><strong>Pros:</strong> Easy when you want to store paired data, QUICK</p>
+                <p><strong>Cons:</strong> Can be conceptually confusing</p>
+                <br />
+                <img src="~/Images/Dictionary.png" class="img-responsive" />
+            </div>
+
+            <!-- Hash Table -->
+            <div class="col-md-4">
+                <h2>Hash Table</h2>
+                <p><strong>Key value Pairs</strong> (Think Dictionary word-definitioin pairs)</p>
+                <p><strong>Pros:</strong> Optimized for lookups</p>
+                <p><strong>Cons:</strong> Slower than Dictionary, considered obsolete</p>
+                <br />
+                <img src="~/Images/HashTable.png" class="img-responsive" />
+            </div>
+
+            <!-- Hash Set -->
+            <div class="col-md-4">
+                <h2>Hash Set</h2>
+                <p><strong>Key value Pairs</strong> (Without duplicates)</p>
+                <p><strong>Pros:</strong> Prevents duplicate values</p>
+                <p><strong>Cons:</strong> Slightly slower than a dictionary</p>
+                <br />
+                <img src="~/Images/HashSet.png" class="img-responsive" />
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VideoTutorials.Models;
 
 // Controller for ASP.NET MVC C# Tutorial video assignment
 // https://github.com/byu-is-403/syllabus/blob/master/asp-dotnet-mvc/asp-mvc-tutorial.md
@@ -26,9 +27,24 @@ namespace VideoTutorials.Controllers
             return View();
         }
 
+        // HTTPGET AND HTTPPOST MUST have the same name, in this case it is RsvpForm
+        [HttpGet]
         public ViewResult RsvpForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ViewResult RsvpForm(GuestResponse response)
+        {
+            if(ModelState.IsValid)
+            {
+                return View("ThankYou", response);
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

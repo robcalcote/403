@@ -6,13 +6,23 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        @Html.Raw((String)ViewBag.TeamNamesSorted)
-    </div>
-</body>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+
+    <body>
+        <div class="container body-content">
+            <!-- Header with a link back to the home page -->
+            <div class="jumbotron">
+                <h1 style="text-align:center">YouTube - Creating an MVC tutorial</h1>
+                <h3 style="text-align:center"><a href="/Home/Index">Click here to go back</a></h3>
+            </div>
+            <div>
+                @Html.Raw((String)ViewBag.TeamNamesSorted)
+            </div>
+        </div>
+    </body>
 </html>

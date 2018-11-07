@@ -10,17 +10,25 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
 
-    <div>
+<body>
+    <div class="container body-content">
+        <!-- Header with a link back to the home page -->
+        <div class="jumbotron">
+            <h1 style="text-align:center">Form practice!</h1>
+            <h3 style="text-align:center"><a href="/Home/Index">Click here to go back</a></h3>
+        </div>
         @ViewBag.Greeting World
         <p>We are having a cool pool party</p>
         @Html.ActionLink("RSVP Now", "RsvpForm")
-    </div>
-    <br />
-    <div>
-        @ViewBag.Opponent in the tournament!
+
+        <br />
+        <div>
+            @ViewBag.Opponent in the tournament!
+        </div>
     </div>
 </body>
 </html>

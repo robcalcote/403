@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sep24</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container body-content">
+        <!-- Header with a link back to the home page -->
+        <div class="jumbotron">
+            <h1 style="text-align:center">Data Structures Walkthrough</h1>
+            <h3 style="text-align:center"><a href="/Home/Index">Click here to go back</a></h3>
+        </div>
+
+        <div class="row">
+            <!-- Arrays -->
+            <div class="col-md-3">
+                <div>
+                    <h2>Arrays used in a Controller</h2>
+                    <p>The output is an Array of 5 length with 5 numbers randomly generated</p>
+                    @Html.Raw((String)ViewBag.ArrayContents)
+                </div>
+            </div>
+        </div>
+</body>
+</html>

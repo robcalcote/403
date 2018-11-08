@@ -147,6 +147,7 @@
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Sep19\IndexController.cs" />
+    <Compile Include="Controllers\Sep24\Home0924Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +211,8 @@
     <Content Include="Views\Home\myTeam.cshtml" />
     <Content Include="Views\Home0912\Index.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Home\Sep24.cshtml" />
+    <Content Include="Views\Home0924\Sep24.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
